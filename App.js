@@ -1,6 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import Bejegyzes from './Bejegyzes';
+import { useState } from 'react';
+import useBejegyzesek from './useBejegyzesek'
+
 
 // Kézzel megadott, három elemű bejegyzések tömb
 const bejegyzesek = [
@@ -23,6 +26,7 @@ const bejegyzesek = [
   },
 ];
 
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -32,6 +36,9 @@ export default function App() {
       {bejegyzesek.map((b) => (
         <Bejegyzes key={b.id} cim={b.cim} hely={b.hely} leiras={b.leiras} />
       ))}
+
+      
+
 
       <StatusBar style="auto" />
     </View>

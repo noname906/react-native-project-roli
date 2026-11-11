@@ -1,13 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
-// A props-ot destrukturálással olvassuk ki: { cim, hely, leiras }
-export default function Bejegyzes({ cim, hely, leiras }) {
+export default function Bejegyzes({id, cim, hely, kedvelt, kedveles}) {
   return (
     <View style={styles.kartya}>
       <Text style={styles.cim}>{cim}</Text>
       <Text style={styles.hely}>{hely}</Text>
-      {/* Ha nincs leírás, ezt a sort nem írjuk ki */}
-      {leiras ? <Text style={styles.leiras}>{leiras}</Text> : null}
+      <Button title={kedvelt ? 'kedvelt' : 'nincs kedvelve'} onPress={() => kedveles(id)} style={styles.Button}></Button>
     </View>
   );
 }
@@ -29,8 +27,7 @@ const styles = StyleSheet.create({
     color: '#555',
     marginTop: 2,
   },
-  leiras: {
-    fontSize: 14,
-    marginTop: 6,
-  },
+  kedvelt: {
+    width: 20,
+  }
 });

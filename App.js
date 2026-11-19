@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Pressable } from 'react-native';
 import Bejegyzes from './Bejegyzes';
 import { useState } from 'react';
 import useBejegyzesek from './hooks/useBejegyzesek';
@@ -17,7 +17,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.fejlec}>Útinapló</Text>
 
-      <Text style={styles.cim}>
+      <Text  style={styles.cim}>
         Bejegyzések száma: {bejegyzesek.length} és ebből kedvelt: {bejegyzesek.filter((b) => b.kedvelt).length}
       </Text>
 
@@ -32,7 +32,7 @@ export default function App() {
         <Text>Bejegyzések betöltése...</Text>
       ) : (
         bejegyzesek.map((b) => (
-          <Bejegyzes style={styles.bejegyzes} key={b.id} id={b.id} cim={b.cim} hely={b.hely} kedvelt={b.kedvelt} kedveles={kedveles} />
+          <Bejegyzes  style={styles.bejegyzes}key={b.id} id={b.id} cim={b.cim} hely={b.hely} kedvelt={b.kedvelt} kedveles={kedveles} />
         ))
       )}
 
@@ -44,8 +44,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
     borderRadius:4,
-    backgroundColor: '#fff',
+   backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingTop: 60,
@@ -64,6 +65,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     width: '100%',
   },
+
   bejegyzes: {
     borderColor: 'black',
     padding: 10,
@@ -71,5 +73,4 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   }
   
-  
-});
+  });

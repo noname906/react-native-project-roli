@@ -1,15 +1,14 @@
-import { Button, StyleSheet, Text, View } from 'react-native';
+import {Button, StyleSheet, Text, View, Pressable} from 'react-native';
 
 export default function Bejegyzes({ id, cim, hely, kedvelt, kedveles }) {
   return (
     <View style={styles.kartya}>
       <Text style={styles.cim}>{cim}</Text>
       <Text style={styles.hely}>{hely}</Text>
-      <Button
-        title={kedvelt ? 'kedvelt' : 'nincs kedvelve'}
+      <Pressable style={styles.hatter}
         onPress={() => kedveles(id)}
-        style={styles.Button}
-      ></Button>
+        //title={kedvelt ? 'kedvelt' : 'nincs kedvelve'}
+        ><Text></Text></ Pressable>
     </View>
   );
 }
@@ -17,7 +16,7 @@ export default function Bejegyzes({ id, cim, hely, kedvelt, kedveles }) {
 const styles = StyleSheet.create({
   kartya: {
     backgroundColor: '#f2f2f2',
-    borderRadius: 8,
+    borderRadius: 20,
     padding: 12,
     marginBottom: 10,
     width: '100%',
@@ -34,4 +33,8 @@ const styles = StyleSheet.create({
   kedvelt: {
     width: 20,
   },
+  hatter: {
+    backgroundColor: '#3f21bb',
+    borderColor: '#e61b1b'
+  }
 });

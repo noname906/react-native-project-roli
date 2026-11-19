@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, Pressable } from 'react-native';
 import Bejegyzes from './Bejegyzes';
 import { useState } from 'react';
 import useBejegyzesek from './hooks/useBejegyzesek';

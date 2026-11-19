@@ -44,3 +44,6 @@ export default function useBejegyzesek() {
     kedveles,
   };
 }
+const styles = StyleSheet.create({
+
+});

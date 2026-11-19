@@ -17,7 +17,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.fejlec}>Útinapló</Text>
 
-      <Text>
+      <Text style={styles.cim}>
         Bejegyzések száma: {bejegyzesek.length} és ebből kedvelt: {bejegyzesek.filter((b) => b.kedvelt).length}
       </Text>
 
@@ -32,7 +32,7 @@ export default function App() {
         <Text>Bejegyzések betöltése...</Text>
       ) : (
         bejegyzesek.map((b) => (
-          <Bejegyzes key={b.id} id={b.id} cim={b.cim} hely={b.hely} kedvelt={b.kedvelt} kedveles={kedveles} />
+          <Bejegyzes style={styles.bejegyzes} key={b.id} id={b.id} cim={b.cim} hely={b.hely} kedvelt={b.kedvelt} kedveles={kedveles} />
         ))
       )}
 
@@ -44,6 +44,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    borderRadius:4,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -57,10 +58,18 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#000000',
     borderRadius: 6,
     padding: 10,
     marginBottom: 10,
     width: '100%',
   },
+  bejegyzes: {
+    borderColor: 'black',
+    padding: 10,
+    margin: 5,
+    borderWidth: 1,
+  }
+  
+  
 });
